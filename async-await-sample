@@ -1,0 +1,41 @@
+function getResponse(url) {
+    return new Promise(function(sucsses, failure) {
+        var request = new XMLHttpRequest();
+           request.open('GET', url);
+
+      request.onload = function() {
+          if (requst.status = 200) {
+              return sucsses (requsr, response);
+          }
+          else {
+              return failure("Error in processing..!" + request.status);
+          }
+      }    
+      request.onerror = function () {
+          return failure ("Error in processing");
+      } 
+      request.send();
+    });
+}
+
+function getUsername(response) {
+    response = JSON.parse(response);
+    return response["login"];
+}
+
+function makeUsernameCaps(name) {
+    return new Promise(function(sucsses, failure){
+        //let's assum it takes3secs to make the username caps
+        setTimeout(function() {
+            sucsses(name.toUpperCase());
+        }, 3000)
+    });
+}
+
+apiCall("https://api.github.com/users/srebalaji")
+.then(function(x){
+    console.log(x);
+})
+.catch(function(x) {
+    console.log("Error - "+x);
+});
