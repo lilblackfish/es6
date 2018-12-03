@@ -1,0 +1,41 @@
+class person {
+constructor(firstname, lastName, age) {
+this.firstName = name;
+this.lastName = lastName;
+this.age = age;
+}
+displayName() {
+return '${this.firstName} - ${this.lastName}';
+              }
+}
+class employee extend person {
+constructor (firstName, lastName, age, salary) {
+super(firstName,lastName,age);
+this.salary = salary;
+}
+display salary() {
+return '${this.salary}';
+}
+display age() {
+return '${this.age}';
+}
+ displayName() {
+  return super.displayName();
+ }
+}
+
+let manager = new employee ("Mostafa", "Esmaeili", 23, 100);
+console.log(manager.displaySalary());
+console.log(manager.displayName());
+console.log(manager.displayAge());
+//output:
+//100
+//Mostafa Esmaeili
+//23
+
+//
+//Note: you can use this in the sub-class only after calling super,
+//If you use this before calling super in the sub-class you will get RefrenceError.
+//We used extends to create a sub-class from the parent class.
+//We used super to call the constructor of the parent class.
+//We used super to call the method defined in the parent class.
