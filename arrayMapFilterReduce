@@ -1,0 +1,19 @@
+//<b>arrayMap</b><br />
+let arr = [1,2,3,4,5];
+let modifiedArr = arr.map(function(element, index, arr) {
+return element * 10; 
+});
+// index and arr are optional - because we've 3 parameter, we need to declare which one JS should return
+//below example is with arrow function 
+
+let modifiedArr = arr.map(element => element * 10);
+cosole.log(modifiedArr);
+//if you have a function with single parameter, you dont need () also JS will return that parameter itself
+//if you have single line as the body of function you don't need {}
+ 
+let arr = [1,2,3,4,5,6];
+let modifiedArr = arr.filter(function(element, index, arr){
+return element %2 == 0 });
+// output : [2,4,6]
+
+
