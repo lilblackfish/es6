@@ -1,0 +1,35 @@
+//template literrals
+let name = "Mostafa Esmaeili";
+let languages = () => {return "HTML,CSS,JS"};
+let msg= 'I am ${name}, I code in ${languages()} and my age is ${20+7+0.5}; //wooooow
+//output: I am Mostafa Esmaeili, I code in HTML,CSS,JS and my age is 27.5
+
+//app.js file
+export default const name = "mostafa";
+export let age = 27.5;
+
+//index.js file
+import {name,age} from './app';
+
+//index.html file
+<script scr="./index.js"></script> 
+//default values are mostly used if you need to export a single value or function or object from module
+//mudoles can have only one default value so you can use any name to reference it during import
+ 
+
+//app.js
+let a = 10;
+let b = 2;
+let sum = () => a+b;
+export {a,b}
+export default sum
+
+//index.js
+import * as variables from './app';
+import addition from './app';
+
+//If you are using * to import values then you have to use alias (i.e) names that will refer to imported values
+//Using * to import values doesn’t import default value. You have to import it separately.
+
+//If you need to import default value and other values in a single line, you can use the above syntax.
+import addition, * as variables from './app'
