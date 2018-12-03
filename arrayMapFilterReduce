@@ -1,19 +1,40 @@
-//<b>arrayMap</b><br />
+//arrayMap
 let arr = [1,2,3,4,5];
 let modifiedArr = arr.map(function(element, index, arr) {
 return element * 10; 
 });
 // index and arr are optional - because we've 3 parameter, we need to declare which one JS should return
 //below example is with arrow function 
-
 let modifiedArr = arr.map(element => element * 10);
 cosole.log(modifiedArr);
 //if you have a function with single parameter, you dont need () also JS will return that parameter itself
 //if you have single line as the body of function you don't need {}
- 
+
+//filter function
 let arr = [1,2,3,4,5,6];
 let modifiedArr = arr.filter(function(element, index, arr){
 return element %2 == 0 });
 // output : [2,4,6]
+//above code with arrow function
+let arr = [1,2,3,4,5,6];
+let modifiedArr = arr.filter((element, index) => element %2 == 0 )
 
+//arrayReduce aggregates all elements of array and returns a single value
 
+let arr = [1,2,3,4,5,6];
+let total = arr.reduce (function(sum, element, index, array) {
+return sum+element; 
+},0);
+console.log("total: "+total);
+//output: total: 21
+//first parameter (sum) is aggregator element and its initial value is set to 0 in above example
+
+//another example
+let arr = [1,2,3,4,5,6];
+let totalSum = arr.reduce(function(sum, element) {
+return sum+element;
+},10);
+//output: total: 31
+//two first parameters are mandatory
+//above example with arrow function:
+let totalSum = arr.reduce(sum, element) => element+sum,10)
